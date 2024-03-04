@@ -28,8 +28,8 @@ new class extends Component {
 
 <div>
     <form class="space-3" wire:submit="submit">
-        <x-input wire:model="noteTitle" label="Title" placeholder="What do you want to write about?"/>
-        <x-textarea wire:model="noteBody" label="Body" placeholder="Start typing your message here!"/>
+        <x-input wire:model="noteTitle" label="Title" placeholder="What do you want to write about?" />
+        <x-textarea wire:model="noteBody" label="Body" placeholder="Start typing your message here!" />
         <x-input label="Recipient" placeholder="friend@example.com" />
         <div class="pt-6">
             <x-wui-button light primary label="Submit" wire:click="submit" right-icon="plus" />

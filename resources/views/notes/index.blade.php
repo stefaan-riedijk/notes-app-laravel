@@ -8,8 +8,8 @@
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="grid justify-items-end">
-                <div class="justify-self-end">
-                    <x-wui-button.circle class="" href="{{ route('notes.create') }}" lg icon="plus" primary />
+                <div class="mr-8 justify-self-end">
+                    <x-wui-button class="" href="{{ route('notes.create') }}" lg icon="plus" primary >Create a new note </x-wui-button>
                 </div>
             </div>
             <div class="grid grid-cols-3 px-6 bg-red-300">
