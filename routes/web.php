@@ -23,4 +23,13 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
+Route::view('notes','notes.index')
+    ->middleware(['auth', 'verified'])
+    ->name('notes');
+
+Route::view('notes/create','notes.create')
+    ->middleware(['auth', 'verified'])
+    ->name('notes.create');
+
+
 require __DIR__.'/auth.php';
