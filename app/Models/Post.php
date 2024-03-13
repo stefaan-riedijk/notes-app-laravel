@@ -10,8 +10,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Post extends Model
 {
     use HasFactory, HasUuids;
-    
+
     protected $fillable = ['title','body','is_published'];
+    
 
     public function users() : BelongsTo {
         return $this->belongsTo(User::class);

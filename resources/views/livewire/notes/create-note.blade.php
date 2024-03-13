@@ -31,6 +31,7 @@ new class extends Component {
         <x-input wire:model="noteTitle" label="Title" placeholder="What do you want to write about?" />
         <x-textarea wire:model="noteBody" label="Body" placeholder="Start typing your message here!" />
         <x-input label="Recipient" placeholder="friend@example.com" />
+        <x-errors />
         <div class="pt-6">
             <x-wui-button light primary label="Submit" wire:click="submit" right-icon="plus" />
         </div>

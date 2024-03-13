@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome');
+Route::view('/', 'welcome')->name('welcome');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
@@ -31,5 +32,9 @@ Route::view('notes/create','notes.create')
     ->middleware(['auth', 'verified'])
     ->name('notes.create');
 
+Route::get('notes/{note}', function (Post $note) {
+    $user = $note->user;
+    return view('notes.view',['note'=>$note,'user'=>$user]);
+})->name('notes.view');
 
 require __DIR__.'/auth.php';

@@ -29,6 +29,7 @@ new class extends Component {
             </div>
             <div class="absolute flex justify-end w-full mx-2 bottom-2">
                 <x-wui-button icon="trash" wire:click="delete('{{$note->id}}')" class="w-5 h-6 mr-5"/>
+                <x-wui-button icon="eye" href="{{ route('notes.view', $note) }}" class="w-5 h-6 mr-5"/>
             </div>
         </x-card>
     @endforeach
