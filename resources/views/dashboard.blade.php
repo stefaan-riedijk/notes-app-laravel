@@ -13,7 +13,7 @@
                     <p>Welcome back, {{ Str::of(auth()->user()->name)->explode(' ')->get(0)}}!</p>
                 </div>
                 <div class="p-6 m-5 text-gray-900 bg-blue-300 rounded-md">
-                    <p>So far you have created {{ App\Models\Post::count() }} posts! Keep up the good work! </p>
+                    <p>So far, you have created {{ App\Models\Post::count() }} posts! Keep up the good work! </p>
                 </div>
             </div>
         </div>
