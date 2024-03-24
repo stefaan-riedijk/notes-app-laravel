@@ -15,7 +15,7 @@ new class extends Component {
     }
 }; ?>
 
-<nav class="fixed z-10 w-full bg-blue-400 border-b border-gray-100" x-data="{ open: false }">
+<nav class="fixed z-10 w-full border-b border-gray-100 bg-primary" x-data="{ open: false }">
     <!-- Primary Navigation Menu -->
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -23,7 +23,7 @@ new class extends Component {
                 <!-- Logo -->
                 <div class="flex items-center shrink-0">
                     <a href="{{ route('welcome') }}" wire:navigate>
-                        <x-application-logo class="block w-auto h-12 text-gray-800 fill-current" />
+                        <x-application-logo class="block w-auto h-12 fill-current text-primary-content" />
                     </a>
                 </div>
 
@@ -32,18 +32,18 @@ new class extends Component {
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('notes')" :active="request()->routeIs('notes')" wire:navigate>
+                    <x-nav-link :href="route('notes.index')" :active="request()->routeIs('notes')" wire:navigate>
                         {{ __('Notes') }}
                     </x-nav-link>
                 </div>
             </div>
 
             <!-- Settings Dropdown -->
-            <div class="hidden bg-blue-400 sm:ms-6 sm:flex sm:items-center">
+            <div class="hidden bg-primary sm:ms-6 sm:flex sm:items-center">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out border border-transparent rounded-md hover:text-gray-700 focus:outline-none">
+                            class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 transition duration-150 ease-in-out border border-transparent rounded-md text-primary-content hover:text-secondary-content focus:outline-none">
                             <div x-data="{{ json_encode(['name' => auth()->user()->name]) }}" x-text="name"
                                 x-on:profile-updated.window="name = $event.detail.name"></div>
 
@@ -76,7 +76,7 @@ new class extends Component {
             <!-- Hamburger -->
             <div class="flex items-center -me-2 sm:hidden">
                 <button
-                    class="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none"
+                    class="inline-flex items-center justify-center p-2 transition duration-150 ease-in-out rounded-md text-primary-content hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none"
                     @click="open = ! open">
                     <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path class="inline-flex" :class="{ 'hidden': open, 'inline-flex': !open }"

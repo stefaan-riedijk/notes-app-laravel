@@ -39,7 +39,7 @@
                             <h1 class="text-3xl font-semibold text-center">Share with friends</h1>
                         
                         <div class='flex flex-row-reverse m-5'>
-                            <x-wui-button class="text-xl" primary light wire:click="{{ route('notes') }}">Begin met
+                            <x-wui-button class="text-xl" primary light wire:click="{{ route('notes.index') }}">Begin met
                                 notities
                                 schrijven</x-wui-button>
                         </div>
@@ -49,12 +49,12 @@
                             <h1 class="text-3xl font-semibold text-center">Share with friends</h1>
                         </div>
                         <div class='flex flex-row-reverse m-5'>
-                            <x-wui-button class="text-xl" primary light wire:click="{{ route('notes') }}"
+                            <x-wui-button class="text-xl" primary light wire:click="{{ route('notes.index') }}"
                                 wire:navigate>Get
                                 started</x-wui-button>
                         </div>
                     </div>
-                    <div class="grid grid-cols-3 gap-5 rounded-lg mt-15">
+                    <div class="grid gap-5 rounded-lg lg:grid-cols-3 mt-15">
                         <div class="col-span-1 pb-8 bg-blue-300 rounded-lg shadow-lg">
                             <x-icon name="pencil-alt" class="w-8 h-8 mx-auto"></x-icon>
                             <p class="align-middle">Ontketen je creativiteit en deel al jouw meest gekke ideeen met je vrienden! begin nu met schrijven en probeer het uit!</p>
@@ -82,7 +82,7 @@
                         <h1 class="text-3xl font-semibold text-center">Share with friends</h1>
                     </div>
                     <div class='flex flex-row-reverse m-5'>
-                        <x-wui-button class="text-xl" primary light wire:click="{{ redirect()->route('notes') }}">Begin met
+                        <x-wui-button class="text-xl" primary light wire:click="{{ redirect()->route('notes.index') }}">Begin met
                             notities
                             schrijven</x-wui-button>
                     </div>
@@ -104,6 +104,7 @@
             </div>
         </div>
     </div>
+    <livewire:layout.footer></livewire:layout.footer>
 </body>
 
 </html>

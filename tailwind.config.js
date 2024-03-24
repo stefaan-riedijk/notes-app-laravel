@@ -21,6 +21,8 @@ export default {
             },
         },
     },
-
-    plugins: [forms],
+    daisyui: {
+        themes: ["retro"],
+    },
+    plugins: [forms, require("daisyui")],
 };
