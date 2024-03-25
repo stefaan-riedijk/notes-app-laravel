@@ -10,7 +10,7 @@
             <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div class="grid justify-items-end">
                     <div class="mr-8 justify-self-end">
-                        <x-wui-button class="" href="{{ route('notes.create') }}" lg icon="plus" primary >Create a new note </x-wui-button>
+                        <x-wui-button class="bg-primary" href="{{ route('notes.create') }}" lg icon="plus" primary >Create a new note </x-wui-button>
                     </div>
                 </div>
                 <div class="shadow-sm sm:rounded-lg">

@@ -1,4 +1,4 @@
-<div class="relative bottom-0 w-full border bg-secondary"> 
+<div class="relative bottom-0 w-full border-t-2 bg-base-300 border-base-500"> 
     <div class='max-w-6xl py-6 mx-auto'>
         
         <div class="grid grid-cols-2 gap-5 font-bold text-secondary-content">

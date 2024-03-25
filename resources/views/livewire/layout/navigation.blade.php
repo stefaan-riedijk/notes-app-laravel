@@ -15,7 +15,7 @@ new class extends Component {
     }
 }; ?>
 
-<nav class="fixed z-10 w-full border-b border-gray-100 bg-primary" x-data="{ open: false }">
+<nav class="fixed z-10 w-full border-b border-base-content bg-base-300" x-data="{ open: false }">
     <!-- Primary Navigation Menu -->
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -39,7 +39,7 @@ new class extends Component {
             </div>
 
             <!-- Settings Dropdown -->
-            <div class="hidden bg-primary sm:ms-6 sm:flex sm:items-center">
+            <div class="hidden bg-base-300 sm:ms-6 sm:flex sm:items-center">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button

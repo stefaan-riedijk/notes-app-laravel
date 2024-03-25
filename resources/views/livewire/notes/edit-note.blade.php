@@ -38,10 +38,10 @@ new #[Layout('layouts.app')] class extends Component {
 <div class="py-20">
     <div class='mx-auto my-3 max-w-7xl'>
         
-        <x-wui-button class='' secondary href="{{ route('notes.index') }}">Back to view</x-wui-button>
+        <x-wui-button class='' icon="arrow-left" blue href="{{ route('notes.index') }}">Back to view</x-wui-button>
     </div>
-    <div class="mx-5 bg-blue-300 rounded-lg min-h-80 max-w-7xl xl:mx-auto">
-        <h1 class="text-center">
+    <div class="mx-5 bg-blue-300 border-2 border-blue-600 rounded-lg min-h-80 max-w-7xl xl:mx-auto">
+        <h1 class="pt-4 text-center">
             Edit your note!
         </h1>
         <form wire:submit='saveNote' class="mx-8">
@@ -50,8 +50,8 @@ new #[Layout('layouts.app')] class extends Component {
             <div class="mt-8">
                 <x-checkbox Label="Public" wire:model="noteIsPublished"/>
             </div>
-            <div class="flex mx-auto text-justify w-fit">
-                <x-wui-button primary label="Save Changes" class="ml-auto mr-6" type="submit" spinner="saveNote"/>
+            <div class="flex pb-4 mx-auto text-justify w-fit">
+                <x-wui-button blue label="Save Changes" class="ml-auto mr-6" type="submit" spinner="saveNote"/>
                 <x-action-message on="note-saved" class="mx-auto "/>
             </div>
         </form>

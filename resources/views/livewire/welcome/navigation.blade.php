@@ -1,5 +1,5 @@
 
-    <div class="z-10 flex flex-row w-full p-6 bg-blue-400 drop-shadow-lg text-end sm:fixed sm:right-0 sm:top-0 min-h-14">
+    <div class="z-10 flex flex-row w-full p-6 border-b-2 border-base-content bg-base-300 drop-shadow-lg text-end sm:fixed sm:right-0 sm:top-0 min-h-14">
             <a href="{{ route('welcome') }}" wire:navigate class="border-black rounded-lg hover:border">
                 <x-application-logo class="block w-auto text-gray-800 fill-current h-14" />
             </a>
