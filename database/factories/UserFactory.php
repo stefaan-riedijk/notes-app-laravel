@@ -32,6 +32,17 @@ class UserFactory extends Factory
         ];
     }
 
+    public function developer(): Factory
+    {
+        return $this->state(function (array $attributes) {
+        return [
+            'name' => 'Stefaan Riedijk',
+            'email' =>'stefaanriedijk@gmail.com',
+            'password' => Hash::make('gekkecrazy'),
+            'email_verified_at' => now(),
+        ];
+    });
+    }
     /**
      * Indicate that the model's email address should be unverified.
      */

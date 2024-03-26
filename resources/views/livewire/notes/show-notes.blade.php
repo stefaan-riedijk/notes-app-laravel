@@ -5,26 +5,32 @@ use App\Models\Post;
 use Carbon\Carbon;
 
 new class extends Component {
-
     public $notes;
-    
+
     public $status = 'All';
-    public $sortOptions = "updated_at DESC";
+    public $sortOptions = 'updated_at DESC';
 
     public function updateNotes()
     {
         $this->notes = $this->getNotes();
     }
-    
+
     private function getNotes()
     {
-                
         if ($this->status == 'All') {
-            return Post::whereNotNull('is_published')->orderByRaw($this->sortOptions)->get();
+            return Post::where('user_id', auth()->user()->id)
+                ->orderByRaw($this->sortOptions)
+                ->get();
         } elseif ($this->status == 'Public') {
-            return Post::where('is_published', 1)->orderByRaw($this->sortOptions)->get();
+            return Post::where('user_id', auth()->user()->id)
+                ->where('is_published', 1)
+                ->orderByRaw($this->sortOptions)
+                ->get();
         } elseif ($this->status == 'Private') {
-            return Post::where('is_published', 0)->orderByRaw($this->sortOptions)->get();
+            return Post::where('user_id', auth()->user()->id)
+                ->where('is_published', 0)
+                ->orderByRaw($this->sortOptions)
+                ->get();
         }
     }
 
@@ -36,7 +42,7 @@ new class extends Component {
 
     public function mount()
     {
-        $this->notes = Post::all();
+        $this->notes = Post::where('user_id', auth()->user()->id)->get();
     }
 }; ?>
 
@@ -51,8 +57,9 @@ new class extends Component {
                 <option value="Private">Private</option>
             </x-native-select>
             <div>
-                
-                <x-native-select class="mt-auto" label="Sort By" placeholder="Select one status" wire:model="sortOptions">
+
+                <x-native-select class="mt-auto" label="Sort By" placeholder="Select one status"
+                    wire:model="sortOptions">
                     <option value="title">Alphabetically</option>
                     <option value="updated_at DESC">Last Updated, Descending</option>
                     <option value="updated_at ASC">Last Updated, Ascending</option>
@@ -68,13 +75,17 @@ new class extends Component {
         @foreach ($notes as $note)
             <x-card class="relative border border-base-content bg-base-300" title="{{ ucfirst($note->title) }}"
                 wire:key="{{ $note->id }}" padding="5">
-                <div class='flex flex-row-reverse pt-1 pr-2'>
-                    @if ($note->is_published==true)
-                          <x-badge outline secondary label="Public" />
+                <div class='flex flex-row pt-2 pl-3 pr-2'>
+                    @if ($note->is_published == true)
+                        <x-badge outline secondary label="Public" />
                     @else
-                          <x-badge outline secondary label="Private" />
+                        <x-badge outline secondary label="Private" />
                     @endif
-                  
+                    <div class='ml-auto'>
+                        <x-wui-dropdown class="" position="bottom-right">
+                            <x-wui-dropdown.item label="Settings" />
+                        </x-wui-dropdown>
+                    </div>
                 </div>
                 <a href="{{ route('notes.edit', $note) }}">
                     <div class="p-5">

@@ -8,6 +8,7 @@ use App\Models\Post;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Database\Factories\DevPostFactory;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,11 +18,10 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::factory()->count(5)->has(Post::factory()->count(3))->create();
-        User::create([
-            'name' => 'Stefaan Riedijk',
-            'email' => 'stefaanriedijk@gmail.com',
-            'password' => Hash::make('gekkecrazy'),
-        ]);
+
+        User::factory()->developer()->has(Post::factory()->count(8))->create();
+
+        
         $this->call([
             CategorySeeder::class,
         ]);

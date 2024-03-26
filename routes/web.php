@@ -39,7 +39,7 @@ Volt::route('notes/{note}/edit', 'notes.edit-note')
 
 Route::get('notes/{note}', function (Post $note) {
     if (!$note->is_published) {
-        abort(404);
+        abort(403);
     }
     $user = $note->user;
     return view('notes.view', ['note' => $note, 'user' => $user]);
