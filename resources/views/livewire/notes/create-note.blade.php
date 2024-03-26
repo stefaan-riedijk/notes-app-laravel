@@ -52,7 +52,6 @@ new class extends Component {
         <x-errors />
         <div class="pt-6">
             <x-wui-button light blue label="Submit" wire:click="submit" right-icon="plus" />
-            <x-wui-button light blue label="Submit Test" wire:click="submitTest" right-icon="plus" />
         </div>
     </form>
 </div>
