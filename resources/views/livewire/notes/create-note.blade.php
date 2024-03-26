@@ -35,16 +35,17 @@ new class extends Component {
             $post->category()->associate(Category::where('id', $this->selectedCategory)->get());
             $post->save();
         }
-        dd($post);
+        redirect()->route('notes.index');
     }
 }; ?>
 
-<div class="">
+<div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-semibold text-center">Let the world know your thoughts!</h1>
     <form class="space-3" wire:submit="submit">
         <x-input wire:model="noteTitle" label="Title" placeholder="What do you want to write about?" />
         <x-textarea wire:model="noteBody" label="Body" placeholder="Start typing your message here!" />
         <x-input label="Recipient" placeholder="friend@example.com" />
-        <div class="mt-3">
+        <div class="mt-3 mb-3">
             <x-checkbox wire:model="noteIsPublished" label="Publish" />
         </div>
         <x-select label="Select Category" placeholder="Select a category" :async-data="route('api.categories.index')" option-label="name"

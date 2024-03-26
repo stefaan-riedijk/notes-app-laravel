@@ -36,7 +36,7 @@ new #[Layout('layouts.app')] class extends Component {
 }; ?>
 
 <div class="py-20">
-    <div class='mx-auto my-3 max-w-7xl'>
+    <div class='pl-6 mx-auto my-5 max-w-7xl'>
         
         <x-wui-button class='' icon="arrow-left" blue href="{{ route('notes.index') }}">Back to view</x-wui-button>
     </div>

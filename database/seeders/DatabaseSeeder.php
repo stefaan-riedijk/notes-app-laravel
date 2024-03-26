@@ -22,5 +22,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'stefaanriedijk@gmail.com',
             'password' => Hash::make('gekkecrazy'),
         ]);
+        $this->call([
+            CategorySeeder::class,
+        ]);
     }
-}
+    }
