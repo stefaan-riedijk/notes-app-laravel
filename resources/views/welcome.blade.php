@@ -76,7 +76,7 @@
         </div>
         <section class="px-6 pt-0.5 pb-2 mx-5 font-mono align-top space-6 bg-slate-300 rounded-xl">
 
-            <div class="container justify-center px-4 mx-auto mt-6 rounded-lg bg-primary">
+            <div class="container justify-center px-4 mx-auto mt-6 rounded-lg bg-slate-400">
                 <h1 class="py-3 mb-5 text-3xl font-bold text-center">Get started with note writing and sharing today!</h1>
             </div>
             <div class="container grid gap-4 mx-auto mb-6 font-mono lg:grid-cols-2">
